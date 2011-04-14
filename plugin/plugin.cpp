@@ -1215,13 +1215,12 @@ void *
 PluginInstance::Evaluate (const char *code)
 {
 	NPObject *object = GetHost ();
-	NPString string;
-	NPVariant npresult;
+	NPString string = { };
+	NPVariant npresult = { };
 
 	if (object == NULL)
 		return NULL;
 		
-	
 	string.utf8characters = code;
 	string.utf8length = strlen (code);
 		
